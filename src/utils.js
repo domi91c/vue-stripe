@@ -1,3 +1,7 @@
 export const isSecureHost = () => {
-  return window.location.hostname === 'localhost' || window.location.protocol === 'https:';
+  return (
+    window.location.hostname.match(/.*lvh.me/) ||
+    window.location.hostname === 'localhost' ||
+    window.location.protocol === 'https:'
+  );
 };
